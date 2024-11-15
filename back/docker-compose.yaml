@@ -13,5 +13,14 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  backend:
+    build:
+      dockerfile: deploy/docker/back.Dockerfile
+    container_name: naimix-api
+    ports:
+      - 7000:7000
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:
