@@ -11,6 +11,7 @@ const RegistrationForm = () => {
   const [Rpassword, setRpassword] = useState('');
   const [password, setPassword] = useState('');
   const [Country, setCountry] = useState('');
+  const [City, setCity] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async(e) => {
@@ -65,6 +66,10 @@ const RegistrationForm = () => {
       <div>
         <label htmlFor="Country">Страна рождения:</label>
         <input type="text" id="Country" value={Country} onChange={(e) => setCountry(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="City">Город:</label>
+        <input type="text" id="City" value={City} onChange={(e) => setCity(e.target.value)} />
       </div>
       <div>
         <label htmlFor="password">Пароль:</label>
