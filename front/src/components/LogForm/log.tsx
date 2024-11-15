@@ -7,7 +7,10 @@ const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  const handleProfileClickReg = (event) => {
+    event.preventDefault();
+    navigate('/');
+};
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
@@ -41,6 +44,7 @@ const LoginForm = ({ onLogin }) => {
       </div>
 
       <button type="submit">Войти</button>
+      <a onClick={handleProfileClickReg}>Нет аккаунта, зарегистрируйся!</a>
     </form>
   );
 };

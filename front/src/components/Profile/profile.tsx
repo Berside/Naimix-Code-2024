@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Gheader from '../Header/header.tsx'
 import GFooter from '../Footer/footer.tsx';
+import { useNavigate } from 'react-router-dom';
 const ProfileComponent = () => {
   const [profileInfo, setProfileInfo] = useState({
     name: '',
     email: '',
     bio: ''
   });
-
+  const navigate = useNavigate();
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProfileInfo(prevState => ({ ...prevState, [name]: value }));
@@ -17,6 +18,10 @@ const ProfileComponent = () => {
     e.preventDefault();
     console.log('Профиль обновлен:', profileInfo);
   };
+  const handleProfileClickExit = (event) => {
+    event.preventDefault();
+    navigate('/Login');
+};
 
   return (
     <>
@@ -38,6 +43,7 @@ const ProfileComponent = () => {
           <textarea id="bio" name="bio" value={profileInfo.bio} onChange={handleInputChange} required> </textarea>
         </div>
         <button type="submit">Сохранить изменения профиль</button>
+        <button type="submit" onClick={handleProfileClickExit}>Выйти из аккаунта</button>
       </form>
     </section>
     <GFooter/>
