@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import Gheader from '../Header/header.tsx'
+import GFooter from '../Footer/footer.tsx';
 const ProfileComponent = () => {
   const [profileInfo, setProfileInfo] = useState({
     name: '',
@@ -18,6 +19,8 @@ const ProfileComponent = () => {
   };
 
   return (
+    <>
+    <Gheader />
     <section className="profile-component">
       <h2>Профиль пользователя</h2>
       <form onSubmit={handleSubmit}>
@@ -34,9 +37,11 @@ const ProfileComponent = () => {
           <label htmlFor="bio">Описание:</label>
           <textarea id="bio" name="bio" value={profileInfo.bio} onChange={handleInputChange} required> </textarea>
         </div>
-        <button type="submit">Обновить профиль</button>
+        <button type="submit">Сохранить изменения профиль</button>
       </form>
     </section>
+    <GFooter/>
+    </>
   );
 };
 

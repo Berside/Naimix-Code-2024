@@ -1,8 +1,9 @@
-import LogForm from './components/LogForm/log.tsx'
+import LogForm from './components/LogForm/log.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './hooks/useAuth.js';
 import Home from './components/Home/Home.js';
-import Reg from './components/RegForm/reg.tsx'
+import Reg from './components/RegForm/reg.tsx';
+import Prof from './components/Profile/profile.tsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Reg />} />
           <Route path="/Login" element={<LogForm />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/Profile" element={<Prof />} />
         </Routes>
       </AuthProvider>
     </Router>

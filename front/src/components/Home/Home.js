@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import GHeader from '../Header/header.tsx';
 import GFooter from '../Footer/footer.tsx'; 
 
+
 function Home() {
   const navigate = useNavigate();
 
