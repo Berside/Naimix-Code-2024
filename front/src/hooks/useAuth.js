@@ -20,12 +20,18 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
     navigate('/Home');
   };
+  const main = () => {
+    setIsAuthenticated(false);
+    navigate('/Main');
+  };
+  
 
   const value = {
     isAuthenticated,
     login,
     logout,
-    Home
+    Home,
+    main
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
