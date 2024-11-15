@@ -1,19 +1,21 @@
 import React from 'react';
 import './header.css';
-
+import { Link } from 'react-router-dom';
 
 const Header = ({ title, subtitle, logoImage, profileText }) => {
   return (
     <header className="header">
       <div className="logo-container">
-        <img src='../../imgs/Namix.png' alt='Логотип'/>
+        <img src='../../imgs/Namix.png' alt='Логотип' className="logo-image"/>
       </div>
-      <div className="content-wrapper">
-        <h1>{title}</h1>
-        {subtitle && <p className="subtitle">{subtitle}</p>}
-      </div>
-      <div className="profile-container">
-        <span className="profile">Profile</span>
+      <nav className="navbar">
+        <a><Link to='/'> Услуги </Link></a>
+        <a><Link to='/'> Продукция </Link></a>
+        <a><Link to='/'> О предприятии </Link></a>
+        <a><Link to='/'> Помощь </Link></a>
+      </nav>
+      <div className="icons">
+        <span className="icon icon-home">🏠</span>
       </div>
     </header>
   );
