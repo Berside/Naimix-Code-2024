@@ -1,0 +1,36 @@
+.header {
+    background-color: #F25430; 
+    padding: 20px;
+    text-align: center;
+    color: white
+}
+
+.logo-container {
+    font-size: 1.5em;
+    color: #F25430;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper h1 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-wrapper p {
+    color: black; 
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.profile-container {
+    font-size: 1em;
+    color: #888;
+}
+.profile{
+    color: white
+}
