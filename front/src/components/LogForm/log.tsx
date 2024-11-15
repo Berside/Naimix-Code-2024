@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Home from '../Home/Home';
+import './log.css'
 
 
 const LoginForm = ({ onLogin }) => {

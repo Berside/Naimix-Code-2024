@@ -1,96 +1,48 @@
 .footer {
-    background-color: #000000; 
-    color: #ffffff; 
-    padding: 50px 0;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .social-links {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-links li {
-    margin-right: 10px;
-  }
-  
-  .social-links a {
-    color: #ffffff; 
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .footer__top {
-    padding: 20px 0;
-    border-bottom: 1px solid #cccccc; 
-  }
-  
-  .footer__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 30px 0;
-  }
-  
-  .footer__column {
-    flex: 1;
-  }
-  
-  .footer__column h3 {
-    margin-bottom: 15px;
-    color: #ffffff; 
-    font-size: 18px;
-  }
-  
-  .footer__column p {
-    margin-bottom: 15px;
-    color: #ffffff;
-    font-size: 14px;
-  }
-  
-  .footer__column ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer__column ul li {
-    margin-bottom: 5px;
-  }
-  
-  .footer__column ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .footer__column_right {
-    text-align: right;
-  }
-  
-  .footer-separator {
-    border-top: 1px solid #cccccc; 
-    margin: 30px 0;
-  }
-  
-  @media (max-width: 768px) {
-    .footer__bottom {
-      flex-wrap: wrap;
-    }
-  
-    .footer__column {
-      margin-bottom: 20px;
-      flex: 0 0 100%;
-    }
-  
-    .footer__column_right {
-      text-align: left;
-    }
-  }
-  
+  display: flex;
+  justify-content: right;
+  background-color: #1b0c0c;
+  color: #ffffff;
+  padding-top: 40px ;
+  padding-bottom: 40px;
+  padding-right: 160px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 52px;
+  align-items: flex-start;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li:first-child {
+  font-weight: bold;
+  color: #e8e8e8;
+}
+
+.footer-links ul li:not(:first-child)::before {
+  content: '▶';
+  color: #b33030;
+  margin-right: 4px;
+}
+
+.footer-links a {
+  color: #e8e8e8;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ff6666;
+}
+
+
