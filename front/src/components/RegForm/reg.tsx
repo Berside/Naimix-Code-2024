@@ -14,7 +14,6 @@ const RegistrationForm = () => {
     e.preventDefault();
     console.log('Форма отправлена:', { name, Surname, MiddleName, Telephone,  mail, Dateofbirth, password, Rpassword});
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <div>
