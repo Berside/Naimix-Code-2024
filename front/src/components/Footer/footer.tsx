@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   return (
     <footer className="footer">
@@ -27,7 +26,6 @@ const Footer = () => {
               <li><Link to="/contact">Контакты</Link></li>
             </ul>
           </div>
-
           <div className="footer__column footer__column_right">
             <h3>Свяжитесь с нами</h3>
             <p>Телефон: +7 701 732 01 10</p>

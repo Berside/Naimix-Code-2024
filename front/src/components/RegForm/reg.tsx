@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [name, setname] = useState('');
@@ -9,10 +10,31 @@ const RegistrationForm = () => {
   const [Dateofbirth, setDateofbirth] = useState('');
   const [Rpassword, setRpassword] = useState('');
   const [password, setPassword] = useState('');
+  const [Country, setCountry] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log('Форма отправлена:', { name, Surname, MiddleName, Telephone,  mail, Dateofbirth, password, Rpassword});
+    if (password !== Rpassword) {
+        alert('Пароли не совпадают. Пожалуйста, повторите попытку.');
+        return;
+    }
+    try {
+        const userData = {
+          name,
+          Surname,
+          MiddleName,
+          Telephone,
+          mail,
+          Dateofbirth,
+          password
+        };
+        navigate('/Login', { state: { from: '/' } });
+    } catch (error) {
+      console.error('Ошибка при регистрации:', error);
+      alert('Произошла ошибка при регистрации. Пожалуйста, попробуйте снова.');
+    }
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -39,6 +61,10 @@ const RegistrationForm = () => {
       <div>
         <label htmlFor="Dateofbirth">Время и дата рождения:</label>
         <input type="text" id="Dateofbirth" value={Dateofbirth} onChange={(e) => setDateofbirth(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="Country">Страна рождения:</label>
+        <input type="text" id="Country" value={Country} onChange={(e) => setCountry(e.target.value)} />
       </div>
       <div>
         <label htmlFor="password">Пароль:</label>

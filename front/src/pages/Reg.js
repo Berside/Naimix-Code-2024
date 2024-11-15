@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import RegForm from './../components/RegForm'
-function App() {
+function Reg() {
   return (
     <RegForm/>
   );
 }
-export default App;
+export default Reg;

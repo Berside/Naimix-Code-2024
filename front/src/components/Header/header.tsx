@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Header = ({ title, subtitle }) => {
   return (
     <header className="header">

@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Home from '../Home/Home';
+
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (onLogin) {
-      onLogin({ email, password });
+    try{
+        if (onLogin) {
+        onLogin({ email, password });
+        navigate('/Home');
+        }
+        navigate('/home')
+            const LoginData = {
+                email,
+                password
+            };
+            navigate('/Home', { state: { from: '/Login' } });
+    } catch (error) {
+      console.error('Ошибка при регистрации:', error);
+      alert('Произошла ошибка при регистрации. Пожалуйста, попробуйте снова.');
     }
   };
 
@@ -28,5 +44,4 @@ const LoginForm = ({ onLogin }) => {
     </form>
   );
 };
-
 export default LoginForm;
