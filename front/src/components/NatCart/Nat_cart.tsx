@@ -10,8 +10,9 @@ const CompatibilityForm = () => {
   };
 
   return (
+    <>
+    <GHeader />
     <div>
-      <GHeader />
       <div className="compatibility-container">
         <h1 className="title">Совместимость сотрудников</h1>
         <form className="form-container" onSubmit={handleCalculate}>
@@ -37,8 +38,9 @@ const CompatibilityForm = () => {
           Диаграмма будет отображаться здесь
         </div>
       </div>
-      <GFooter />
     </div>
+    <GFooter />
+    </>
   );
 };
 

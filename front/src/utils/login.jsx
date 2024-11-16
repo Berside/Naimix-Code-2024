@@ -4,7 +4,6 @@ const baseUrl = endpoints();
 export async function login(email, password) {
   try {
     const fullUrl = `${baseUrl}/api/v1/auth/login?email=${email}&password=${password}`;
-    console.log(fullUrl);
     const response = await fetch(fullUrl, {
       method: 'GET',
       headers: {
@@ -15,7 +14,6 @@ export async function login(email, password) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const result = await response.json();
-    console.log('Success:', result);
     return result;
   } catch (error) {
     console.error('Error:', error);

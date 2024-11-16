@@ -10,11 +10,6 @@ export async function post(data) {
       },
       body: JSON.stringify(data),
     });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
     const result = await response.json();
     console.log('Success:', result);
     return result;
