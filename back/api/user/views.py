@@ -26,6 +26,7 @@ class UserAuthViewSet(viewsets.ViewSet):
     def login(request):
         email = request.query_params.get('email')
         password = request.query_params.get('password')
+        print(request.query_params)
         if email and password:
             user = UserService.login(email, password)
             if user:
