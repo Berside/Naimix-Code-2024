@@ -3,7 +3,7 @@ const baseUrl = endpoints();
 
 export async function post(data) {
   try {
-    const response = await fetch(`${baseUrl}/api/v1/auth/register/`, {
+    const response = await fetch(`${baseUrl}/api/v1/user/auth/register/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +19,6 @@ export async function post(data) {
   }
 }
 
-// Example usage:
 const userData = {
   email: 'example@email.com',
   password: 'securePassword123',

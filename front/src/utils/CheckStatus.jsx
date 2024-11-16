@@ -4,7 +4,7 @@ import { Fetcher } from './Fetch.jsx';
 export async function CheckStatus() {
   try {
     const baseUrl = endpoints();
-    const fullUrl = `${baseUrl}/api/v1/auth/status/`;
+    const fullUrl = `${baseUrl}/api/v1/user/auth/status/`;
     
     console.log('Выполняем запрос к:', fullUrl);
 
@@ -17,7 +17,6 @@ export async function CheckStatus() {
       console.error('Ошибка:', errorText);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
     let jsonData;
     try {
       jsonData = await response.json();
@@ -33,7 +32,6 @@ export async function CheckStatus() {
       }
       throw new Error('Неправильный формат ответа');
     }
-
     return jsonData;
   } catch (error) {
     console.error('Пиздец:', error);

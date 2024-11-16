@@ -3,7 +3,7 @@ const baseUrl = endpoints();
 
 export async function login(email, password) {
   try {
-    const fullUrl = `${baseUrl}/api/v1/auth/login?email=${email}&password=${password}`;
+    const fullUrl = `${baseUrl}/api/v1/user/auth/login?email=${email}&password=${password}`;
     const response = await fetch(fullUrl, {
       method: 'GET',
       headers: {
