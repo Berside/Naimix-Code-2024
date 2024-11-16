@@ -43,5 +43,9 @@ class UserService:
         UserRepository.update(email, data)
 
     @staticmethod
+    def update_current_user(user_id: int, data: dict):
+        UserRepository.update_current_user(user_id, data)
+
+    @staticmethod
     def delete(email: str):
         UserRepository.delete(email)
