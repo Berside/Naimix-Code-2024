@@ -5,7 +5,6 @@ import Home from './components/Home/Home.js';
 import Reg from './components/RegForm/reg.tsx';
 import Prof from './components/Profile/profile.tsx';
 import Fmain from './components/main/main.tsx'
-
 function App() {
   return (
     <Router>
