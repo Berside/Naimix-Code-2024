@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import GHeader from '../Header/header.tsx';
-import GFooter from '../Footercopy/flooter.tsx'
+import GFooter from '../Footer/footer.tsx'
 import Card from '../Card/Card.jsx';
 import './home.css';
 import {CheckStatus} from '../../utils/CheckStatus.jsx'
