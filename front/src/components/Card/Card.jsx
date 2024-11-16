@@ -14,7 +14,7 @@ const Card = ({ name, zodiacSign, age }) => {
       <p><strong>Имя:</strong> {name}</p>
       <p><strong>Знак зодиака:</strong> {zodiacSign}</p>
       <p><strong>Возраст:</strong> {age} лет</p>
-      <a onClick={handleRaz}>Чекнуть</a>
+      <a onClick={handleRaz}>&gt;</a> 
     </div>
   );
 };
