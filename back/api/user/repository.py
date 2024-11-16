@@ -12,3 +12,21 @@ class UserRepository:
         if user.check_password(password):
             return user
         return None
+
+    @staticmethod
+    def get_one(data: dict):
+        user = CustomUser.objects.filter(**data)
+        return user.first()
+
+    @staticmethod
+    def get_many(data: dict):
+        users = CustomUser.objects.filter(**data)
+        return users
+
+    @staticmethod
+    def update(email: str, data: dict):
+        CustomUser.objects.filter(email=email).update(**data)
+
+    @staticmethod
+    def delete(email: str):
+        CustomUser.objects.filter(email=email).delete()
