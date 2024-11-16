@@ -4,14 +4,24 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../imgs/123.png'
 import { CgProfile } from "react-icons/cg";
+import {Prof} from '../../utils/profile'
 
 function Header() {
     const navigate = useNavigate();
-
-    const handleProfileClick = (event) => {
-        event.preventDefault();
-        navigate('/Profile');
-    };
+    const Hande = async () => {
+        try{
+            navigate('/Profile')
+          const token = localStorage.getItem('token');
+          console.log(token)
+          const response = await Prof(token);
+          console.log(response)
+        } catch{
+        }
+    }
+    // const handleProfileClick = (event) => {
+    //     event.preventDefault();
+    //     navigate('/Profile');
+    // };
     const handel = (event) => {
         event.preventDefault();
         navigate('/Home');
@@ -28,7 +38,7 @@ function Header() {
             <a><Link to='/'> Помощь </Link></a> */}
         </nav>
             <div className="icons">
-                <span className="icon icon-home"><a href="#" onClick={handleProfileClick}><CgProfile size={24} color="#000" /></a></span>
+                <span className="icon icon-home"><a href="#" onClick={Hande}><CgProfile size={24} color="#000" /></a></span>
             </div>
         </header>
     );

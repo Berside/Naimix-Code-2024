@@ -1,105 +1,105 @@
 .profile-component {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #ffeaea;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .profile-component h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .profile-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .profile-left {
-    width: 45%;
-    background-color: #ff5630;
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffeaea;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-  }
-  
-  .profile-photo-placeholder {
-    width: 100%;
-    height: 150px;
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .profile-left input {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: black;
-    color: white;
-  }
-  
-  .save-button {
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  .save-button:hover {
-    background-color: #333;
-  }
-  
-  .profile-right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .profile-section {
-    background-color: #ff5630;
-    color: white;
-    border-radius: 10px;
-    padding: 15px;
-  }
-  
-  .profile-section h2 {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  }
-  
-  .profile-section p {
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  
-  .exit-button {
-    display: block;
-    margin: 20px auto;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  .exit-button:hover {
-    background-color: #333;
-  }
+.profile-component h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profile-left {
+  width: 45%;
+  background: linear-gradient(135deg, #F25430, #b57862); /* Добавлен градиент */
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+
+}
+
+.profile-photo-placeholder {
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-left input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: black;
+  color: white;
+}
+
+.save-button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.save-button:hover {
+  background-color: #333;
+}
+
+.profile-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-section {
+  background: linear-gradient(135deg,#b57862, #F25430); /* Добавлен градиент */
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.profile-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.profile-section p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.exit-button {
+  display: block;
+  margin: 20px auto;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.exit-button:hover {
+  background-color: #333;
+}

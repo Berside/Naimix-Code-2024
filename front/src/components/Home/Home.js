@@ -4,6 +4,7 @@ import GFooter from '../Footer/footer.tsx'
 import Card from '../Card/Card.jsx';
 import './home.css';
 import {CheckStatus} from '../../utils/CheckStatus.jsx'
+import {Prof} from '../../utils/profile.jsx'
 function Home() {
   const navigate = useNavigate();
 
