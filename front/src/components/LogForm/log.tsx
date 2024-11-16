@@ -32,7 +32,7 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className = 'form-log' onSubmit={handleSubmit}>
       <h2>Вход в систему</h2>
       <div>
         <label htmlFor="email">Email:</label>
