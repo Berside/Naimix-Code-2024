@@ -102,6 +102,12 @@ class UserLoggedViewSet(viewsets.ViewSet):
         # parameters=UserGetSerializer,
         responses={200: UserGetSerializer},
     )
+
+    def update_current_user(request):
+        data = request.data
+        UserService.update_current_user(request.user.id, data)
+        return JsonResponse({'message': 'success'})
+
     def delete(request):
         email = request.data['email']
         if email:

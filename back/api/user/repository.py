@@ -28,5 +28,9 @@ class UserRepository:
         CustomUser.objects.filter(email=email).update(**data)
 
     @staticmethod
+    def update_current_user(user_id: int, data:dict):
+        CustomUser.objects.filter(id=user_id).update(**data)
+
+    @staticmethod
     def delete(email: str):
         CustomUser.objects.filter(email=email).delete()
