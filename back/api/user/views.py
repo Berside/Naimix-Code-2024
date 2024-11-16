@@ -1,3 +1,4 @@
+from django.forms import model_to_dict
 from django.http import JsonResponse
 from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
@@ -56,6 +57,13 @@ class UserLoggedViewSet(viewsets.ViewSet):
     @staticmethod
     def status(request):
         return JsonResponse({'message': 'hello'})
+
+    @staticmethod
+    def get_current_user(request):
+        user = request.user
+        data = model_to_dict(user, fields=[field.name for field in user._meta.fields \
+                                           if field.name not in ['password', 'last_login', 'is_superuser']])
+        return JsonResponse(data)
 
     @staticmethod
     @extend_schema(
