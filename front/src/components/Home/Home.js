@@ -29,11 +29,11 @@ function Home() {
         <section className="compatibility-section">
           <h2>Совместимость сотрудников</h2>
           <div className="cards-container">
-            <Card title="Сотрудник 1" onClick={() => navigate('/catalog/1')} />
-            <Card title="Сотрудники 2" onClick={() => navigate('/catalog/2')} />
-            <Card title="Сотрудники 3" onClick={() => navigate('/catalog/3')} />
+            <Card title="Сотрудник 1" onClick={() => navigate('/Main')} />
+            <Card title="Сотрудники 2" onClick={() => navigate('/Main')} />
+            <Card title="Сотрудники 3" onClick={() => navigate('/Main')} />
           </div>
-          <button className="catalog-button" onClick={() => navigate('/catalog')}>Перейти в каталог</button>
+          <button className="catalog-button" onClick={() => navigate('/catalog')}>Перейти к поиску</button>
         </section>
       </div>
       <GFooter />
