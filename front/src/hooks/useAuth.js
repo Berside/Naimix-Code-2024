@@ -24,6 +24,10 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
     navigate('/Main');
   };
+  const compatibility = () => {
+    setIsAuthenticated(false);
+    navigate('/compatibility');
+  };
   
 
   const value = {

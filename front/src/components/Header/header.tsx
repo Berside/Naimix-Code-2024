@@ -12,10 +12,14 @@ function Header() {
         event.preventDefault();
         navigate('/Profile');
     };
+    const handel = (event) => {
+        event.preventDefault();
+        navigate('/Home');
+    };
     return (
         <header className="header">
             <div className="logo-container">
-                <img src={logo} alt='Логотип' className="logo-image"/>
+                <img src={logo} alt='Логотип' className="logo-image"  onClick={handel}/>
             </div>
         <nav className="navbar">
             {/* <a><Link to='/'> Услуги </Link></a>

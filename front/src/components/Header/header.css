@@ -10,7 +10,12 @@
 .logo-container .logo-image {
   height: 50px;
 }
-
+.logo-image {
+  cursor: pointer;
+}
+.logo-image:hover {
+  transform: scale(1.05);
+}
 .navbar {
   display: flex;
   gap: 40px;

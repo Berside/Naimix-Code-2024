@@ -47,8 +47,7 @@ function Home() {
             <Card title="Сотрудники 2" onClick={() => navigate('/Main')} />
             <Card title="Сотрудники 3" onClick={() => navigate('/Main')} />
           </div>
-          <button className="catalog-button" onClick={() => navigate('/catalog')}>Перейти к поиску</button>
-          <button className="catalog-button" onClick={handleCheckStatus}>Статус</button>
+          <button className="catalog-button" onClick={() => navigate('/compatibility')}>Перейти к поиску</button>
         </section>
       </div>
       <GFooter />
