@@ -3,6 +3,8 @@ import './header.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../imgs/Namix.png'
+import { CgProfile } from "react-icons/cg";
+
 function Header() {
     const navigate = useNavigate();
 
@@ -22,7 +24,11 @@ function Header() {
             <a><Link to='/'> Помощь </Link></a> */}
         </nav>
             <div className="icons">
-                <span className="icon icon-home"><a href="#" onClick={handleProfileClick}>🏠</a></span>
+            <span className="icon icon-home">
+                    <a href="#" onClick={handleProfileClick}>
+                        <CgProfile size={24} color="#000" />
+                    </a>
+                </span>
             </div>
         </header>
     );
