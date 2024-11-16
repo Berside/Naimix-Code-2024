@@ -1,76 +1,93 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './reg.css'
+import { post } from '../../utils/post';
 
 const RegistrationForm = () => {
-  const [name, setname] = useState('');
-  const [Surname, setSurname] = useState('');
-  const [MiddleName, setMiddleName] = useState('');
-  const [Telephone, setTelephone] = useState('');
-  const [mail, setmail] = useState('');
-  const [Dateofbirth, setDateofbirth] = useState('');
-  const [Rpassword, setRpassword] = useState('');
+  const [first_name, setName] = useState('');
+  const [last_name, setSurname] = useState('');
+  const [middle_name, setMiddleName] = useState('');
+  const [telephone, setTelephone] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthdate, setDateOfBirth] = useState('');
   const [password, setPassword] = useState('');
-  const [Country, setCountry] = useState('');
-  const [City, setCity] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [birth_country, setbirth_country] = useState('');
+  const [birth_city, setbirth_city] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Форма отправлена:', { name, Surname, MiddleName, Telephone,  mail, Dateofbirth, password, Rpassword});
-    if (password !== Rpassword) {
-        alert('Пароли не совпадают. Пожалуйста, повторите попытку.');
-        return;
+    
+    // Form validation
+    if (!first_name || !last_name || !email || !password || !repeatPassword) {
+      alert('Please fill in all fields');
+      return;
     }
+    
+    if (password !== repeatPassword) {
+      alert('Passwords do not match. Please try again.');
+      return;
+    }
+
     try {
-        const userData = {
-          name,
-          Surname,
-          MiddleName,
-          Telephone,
-          mail,
-          Dateofbirth,
-          password
-        };
-        navigate('/Login', { state: { from: '/' } });
+      // Prepare user data
+      const userData = {
+        email,
+        password,
+        birthdate,
+        birth_country,
+        birth_city,
+        first_name,
+        last_name,
+        middle_name,
+        telephone
+      };
+
+      // Send registration request
+      await post(userData);
+
+      // Redirect to login page after successful registration
+      navigate('/Login', { state: { from: '/' } });
     } catch (error) {
-      console.error('Ошибка при регистрации:', error);
-      alert('Произошла ошибка при регистрации. Пожалуйста, попробуйте снова.');
+      console.error('Error during registration:', error);
+      alert('Registration failed. Please try again later.');
     }
   };
+
   return (
-    <form className = 'form-reg' onSubmit={handleSubmit}>
+    <form className="form-reg" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Имя:</label>
-        <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} />
+        <input type="text" id="name" value={first_name} onChange={(e) => setName(e.target.value)} />
       </div>
       <div>
         <label htmlFor="Surname">Фамилия:</label>
-        <input type="text" id="Surname" value={Surname} onChange={(e) => setSurname(e.target.value)} />
+        <input type="text" id="Surname" value={last_name} onChange={(e) => setSurname(e.target.value)} />
       </div>
       <div>
         <label htmlFor="MiddleName">Отчество:</label>
-        <input type="text" id="MiddleName" value={MiddleName} onChange={(e) => setMiddleName(e.target.value)} />
+        <input type="text" id="MiddleName" value={middle_name} onChange={(e) => setMiddleName(e.target.value)} />
       </div>
       <div>
         <label htmlFor="Telephone">Телефон:</label>
-        <input type="text" id="Telephone" value={Telephone} onChange={(e) => setTelephone(e.target.value)} />
+        <input type="text" id="Telephone" value={telephone} onChange={(e) => setTelephone(e.target.value)} />
       </div>
       <div>
         <label htmlFor="mail">Почта:</label>
-        <input type="text" id="mail" value={mail} onChange={(e) => setmail(e.target.value)} />
+        <input type="text" id="mail" value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div>
         <label htmlFor="Dateofbirth">Время и дата рождения:</label>
-        <input type="text" id="Dateofbirth" value={Dateofbirth} onChange={(e) => setDateofbirth(e.target.value)} />
+        <input type="text" id="Dateofbirth" value={birthdate} onChange={(e) => setDateOfBirth(e.target.value)} />
       </div>
       <div>
         <label htmlFor="Country">Страна рождения:</label>
-        <input type="text" id="Country" value={Country} onChange={(e) => setCountry(e.target.value)} />
+        <input type="text" id="Country" value={birth_country} onChange={(e) => setbirth_country(e.target.value)} />
       </div>
       <div>
         <label htmlFor="City">Город:</label>
-        <input type="text" id="City" value={City} onChange={(e) => setCity(e.target.value)} />
+        <input type="text" id="City" value={birth_city} onChange={(e) => setbirth_city(e.target.value)} />
       </div>
       <div>
         <label htmlFor="password">Пароль:</label>
@@ -78,7 +95,7 @@ const RegistrationForm = () => {
       </div>
       <div>
         <label htmlFor="Rpassword">Повторите пароль:</label>
-        <input type="password" id="Rpassword" value={Rpassword} onChange={(e) => setRpassword(e.target.value)} />
+        <input type="password" id="Rpassword" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
       </div>
       <button type="submit">Зарегистрироваться</button>
     </form>

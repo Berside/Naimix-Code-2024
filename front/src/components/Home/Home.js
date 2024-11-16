@@ -1,11 +1,26 @@
 import { useNavigate } from 'react-router-dom';
 import GHeader from '../Header/header.tsx';
-import GFooter from '../Footer/footer.tsx';
+import GFooter from '../Footer/footer.tsx'
 import Card from '../Card/Card.jsx';
 import './home.css';
-
+import {CheckStatus} from '../../utils/CheckStatus.jsx'
+import {Prof} from '../../utils/profile.jsx'
 function Home() {
   const navigate = useNavigate();
+
+  const handleCheckStatus = async () => {
+    try {
+      const result = await CheckStatus();
+      console.log('Результат проверки статуса:', result);
+    } catch (error) {
+      console.error('Произошла ошибка:', error);
+    }
+    fetch("0.0.0.0:7000/api/v1/auth/status/").then(res => {
+      if (res.ok) {
+      res.json().then(data => console.log(data));
+      }
+      })
+  };
 
   return (
     <>
@@ -33,7 +48,7 @@ function Home() {
             <Card title="Сотрудники 2" onClick={() => navigate('/Main')} />
             <Card title="Сотрудники 3" onClick={() => navigate('/Main')} />
           </div>
-          <button className="catalog-button" onClick={() => navigate('/catalog')}>Перейти к поиску</button>
+          <button className="catalog-button" onClick={() => navigate('/compatibility')}>Перейти к поиску</button>
         </section>
       </div>
       <GFooter />

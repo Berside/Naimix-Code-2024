@@ -13,6 +13,7 @@ RUN ls .
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN python -m pip install django-cors-headers
 
 EXPOSE 7200
 

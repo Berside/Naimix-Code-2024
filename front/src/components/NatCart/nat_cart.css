@@ -1,0 +1,72 @@
+.compatibility-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #ffffff;
+    background-color: #d84315;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #d84315;
+    color: #ffffff;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .form-container label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+  }
+  
+  .form-container button {
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-container button:hover {
+    background-color: #e64a19;
+  }
+  
+  .diagram-placeholder {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px dashed #d84315;
+    border-radius: 10px;
+    text-align: center;
+    color: #666666;
+    font-style: italic;
+  }
+  

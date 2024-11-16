@@ -1,38 +1,34 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Home from '../Home/Home';
-import './log.css'
+import './log.css';
+import { login } from '../../utils/login';
+import endpoints from '../../utils/endpoints';
 
-
-const LoginForm = ({ onLogin }) => {
+const LoginForm = () => {
+  const navigate = useNavigate();
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-  const handleProfileClickReg = (event) => {
-    event.preventDefault();
-    navigate('/');
-};
-  const handleSubmit = async(e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-        if (onLogin) {
-        onLogin({ email, password });
-        navigate('/Home');
-        }
-        navigate('/home')
-            const LoginData = {
-                email,
-                password
-            };
-            navigate('/Home', { state: { from: '/Login' } });
+    try {
+      const response = await login(email, password);
+      console.log(response)
+      if (response && response.token) {
+        localStorage.setItem('token', response.token);
+      } else {
+        throw new Error('No token found in the response');
+      }
+      navigate('/Home');
     } catch (error) {
-      console.error('Ошибка при регистрации:', error);
-      alert('Произошла ошибка при регистрации. Пожалуйста, попробуйте снова.');
+      console.error('Error:', error);
+      alert('Произошла ошибка при входе в систему. Пожалуйста, попробуйте снова.');
     }
   };
-
   return (
-    <form className = 'form-log' onSubmit={handleSubmit}>
+    <form className="form-log" onSubmit={handleSubmit}>
       <h2>Вход в систему</h2>
       <div>
         <label htmlFor="email">Email:</label>
@@ -45,8 +41,9 @@ const LoginForm = ({ onLogin }) => {
       </div>
 
       <button type="submit">Войти</button>
-      <a onClick={handleProfileClickReg}>Нет аккаунта, зарегистрируйся!</a>
+      <a onClick={() => navigate('/Reg')}>Нет аккаунта, зарегистрируйся!</a>
     </form>
   );
 };
+
 export default LoginForm;

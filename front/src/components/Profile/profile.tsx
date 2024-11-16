@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Gheader from '../Header/header.tsx';
 import GFooter from '../Footer/footer.tsx';
 import { useNavigate } from 'react-router-dom';
@@ -10,17 +10,44 @@ const ProfileComponent = () => {
     surname: '',
     phone: '',
     email: '',
+    middleName: '',
+    dateOfBirth: '',
+    country: '',
+    city: '',
+    password: '',
+    rPassword: ''
   });
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Populate initial values if available
+    // This should be replaced with actual data fetching logic
+    setProfileInfo({
+      name: 'Илья',
+      surname: 'Поверинов',
+      phone: '78988983066',
+      email: 'babka@mail.ru',
+      middleName: 'Владимирович',
+      dateOfBirth: '2024-06-09',
+      country: 'Russia',
+      city: 'Moscow',
+      password: '',
+      rPassword: ''
+    });
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProfileInfo((prevState) => ({ ...prevState, [name]: value }));
+    setProfileInfo(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Профиль обновлен:', profileInfo);
+    // Add your submission logic here
   };
 
   const handleProfileClickExit = (event) => {
@@ -35,8 +62,7 @@ const ProfileComponent = () => {
         <h1>Профиль</h1>
         <div className="profile-container">
           <div className="profile-left">
-            <div className="profile-photo-placeholder"></div>
-            <form className ='form-prof' onSubmit={handleSubmit}>
+            <form className='form-prof' onSubmit={handleSubmit}>
               <input
                 type="text"
                 id="name"
@@ -65,14 +91,41 @@ const ProfileComponent = () => {
                 required
               />
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Почта"
-                value={profileInfo.email}
+                type="text"
+                id="middleName"
+                name="middleName"
+                placeholder="Отчество"
+                value={profileInfo.middleName}
                 onChange={handleInputChange}
                 required
               />
+              <input
+                type="date"
+                id="dateOfBirth"
+                name="dateOfBirth"
+                placeholder="Дата рождения"
+                value={profileInfo.dateOfBirth}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                id="country"
+                name="country"
+                placeholder="Страна"
+                value={profileInfo.country}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Город"
+                value={profileInfo.city}
+                onChange={handleInputChange}
+                required
+              />   
               <button type="submit" className="save-button">
                 Сохранить
               </button>

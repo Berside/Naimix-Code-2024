@@ -8,9 +8,14 @@
   padding-right: 160px;
   font-family: Arial, sans-serif;
   font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  height: 0.2%;
 }
 
 .footer-links {
+  margin-right: 50px;
   display: flex;
   gap: 52px;
   align-items: flex-start;
@@ -44,5 +49,6 @@
 .footer-links a:hover {
   color: #ff6666;
 }
+
 
 
