@@ -1,0 +1,37 @@
+.employee-card {
+  margin-bottom: 20px;
+  width: 90%;
+  margin-left: 60px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row; /* Горизонтальное расположение */
+  align-items: center;
+  justify-content: space-between; /* Равное расстояние между элементами */
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+.employee-card h3 {
+  margin: 0;
+}
+
+.employee-card p {
+  margin-left: 100px;
+}
+
+
+.employee-card a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: auto; /* Смещение стрелки к правому краю */
+  cursor: pointer;
+}
+
+.employee-card a:hover {
+  color: #ccc; /* Изменение цвета при наведении */
+}
