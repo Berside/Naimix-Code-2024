@@ -9,6 +9,7 @@ urlpatterns = [
     path('auth/register/', UserAuthViewSet.as_view({'post': 'register'})),
     path('auth/logout/', UserLoggedViewSet.as_view({'get': 'logout'})),
     path('auth/status/', UserLoggedViewSet.as_view({'get': 'status'})),
+    path('auth/get_current_user/', UserLoggedViewSet.as_view({'get': 'get_current_user'})),
     path('get_one/', UserLoggedViewSet.as_view({'get': 'get_one'})),
     path('get_many/', UserLoggedViewSet.as_view({'get': 'get_many'})),
     path('update/', UserLoggedViewSet.as_view({'patch': 'update'})),
