@@ -1,47 +1,51 @@
-/* Основной стиль для хедера */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #F25430; 
-    padding: 32px 100px ;
-    font-family: Arial, sans-serif;
-  }
-  
-  .logo-container .logo-image {
-    height: 50px;
-  }
-  
-  .navbar {
-    display: flex;
-    gap: 40px;
-  }
-  
-  .navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #000000;
-  }
-  
-  .icons {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .icon {
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .icon:hover {
-    color: #ffffff; 
-    transform: scale(1.2);
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F25430; 
+  padding: 32px 100px;
+  font-family: Arial, sans-serif;
+}
+
+.logo-container .logo-image {
+  height: 50px;
+}
+
+.navbar {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #000000;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-home a {
+  display: inline-block;
+  color: #000; 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-home a:hover {
+  color: #ffffff; 
+  transform: scale(1.2); 
+}

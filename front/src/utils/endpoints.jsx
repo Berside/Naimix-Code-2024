@@ -1,3 +1,3 @@
 export default function endpoints(){
-    return "http://0.0.0.0:7000";
+    return "http://127.0.0.1:7000";
 };

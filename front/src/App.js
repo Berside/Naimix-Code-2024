@@ -15,6 +15,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Profile" element={<Prof />} />
           <Route path="/main" element={<Fmain />} />
+          <Route path="/REG" element={<Reg />} />
         </Routes>
       </AuthProvider>
     </Router>
